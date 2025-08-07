@@ -1,0 +1,49 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 488
+  ClientWidth = 364
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object edtAdder: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 0
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 237.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    OnChangeTracking = edtAdderChangeTracking
+  end
+  object btnAdd: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 256.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Add Item'
+    TextSettings.Trimming = None
+    OnClick = btnAddClick
+    object lbMain: TListBox
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Position.X = -256.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 337.000000000000000000
+      Size.Height = 394.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 337.000000000000000000
+      Viewport.Height = 394.000000000000000000
+    end
+  end
+end
