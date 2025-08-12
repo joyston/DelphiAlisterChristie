@@ -21,6 +21,22 @@ type
     Sqlite_demoConnection: TFDConnection;
     CustomersTable: TFDQuery;
     OrdersTable: TFDQuery;
+    ShippersTable: TFDQuery;
+    OrdersTableOrderID: TFDAutoIncField;
+    OrdersTableCustomerID: TStringField;
+    OrdersTableEmployeeID: TIntegerField;
+    OrdersTableOrderDate: TDateTimeField;
+    OrdersTableRequiredDate: TDateTimeField;
+    OrdersTableShippedDate: TDateTimeField;
+    OrdersTableShipVia: TIntegerField;
+    OrdersTableFreight: TCurrencyField;
+    OrdersTableShipName: TStringField;
+    OrdersTableShipAddress: TStringField;
+    OrdersTableShipCity: TStringField;
+    OrdersTableShipRegion: TStringField;
+    OrdersTableShipPostalCode: TStringField;
+    OrdersTableShipCountry: TStringField;
+    OrdersTableShipViaFull: TStringField;
   private
     { Private declarations }
   public

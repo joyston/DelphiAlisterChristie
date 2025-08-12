@@ -77,11 +77,6 @@ object Form1: TForm1
       end
       item
         Expanded = False
-        FieldName = 'ShipVia'
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'Freight'
         Width = 122
         Visible = True
@@ -89,6 +84,12 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'ShipName'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ShipViaFull'
+        Title.Caption = 'Ship Via'
         Visible = True
       end>
   end
@@ -128,5 +129,89 @@ object Form1: TForm1
       'SELECT * FROM Orders')
     Left = 654
     Top = 185
+    object OrdersTableOrderID: TFDAutoIncField
+      FieldName = 'OrderID'
+      Origin = 'OrderID'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object OrdersTableCustomerID: TStringField
+      FieldName = 'CustomerID'
+      Origin = 'CustomerID'
+      FixedChar = True
+      Size = 5
+    end
+    object OrdersTableEmployeeID: TIntegerField
+      FieldName = 'EmployeeID'
+      Origin = 'EmployeeID'
+    end
+    object OrdersTableOrderDate: TDateTimeField
+      FieldName = 'OrderDate'
+      Origin = 'OrderDate'
+    end
+    object OrdersTableRequiredDate: TDateTimeField
+      FieldName = 'RequiredDate'
+      Origin = 'RequiredDate'
+    end
+    object OrdersTableShippedDate: TDateTimeField
+      FieldName = 'ShippedDate'
+      Origin = 'ShippedDate'
+    end
+    object OrdersTableShipVia: TIntegerField
+      FieldName = 'ShipVia'
+      Origin = 'ShipVia'
+    end
+    object OrdersTableFreight: TCurrencyField
+      FieldName = 'Freight'
+      Origin = 'Freight'
+    end
+    object OrdersTableShipName: TStringField
+      FieldName = 'ShipName'
+      Origin = 'ShipName'
+      Size = 40
+    end
+    object OrdersTableShipAddress: TStringField
+      FieldName = 'ShipAddress'
+      Origin = 'ShipAddress'
+      Size = 60
+    end
+    object OrdersTableShipCity: TStringField
+      FieldName = 'ShipCity'
+      Origin = 'ShipCity'
+      Size = 15
+    end
+    object OrdersTableShipRegion: TStringField
+      FieldName = 'ShipRegion'
+      Origin = 'ShipRegion'
+      Size = 15
+    end
+    object OrdersTableShipPostalCode: TStringField
+      FieldName = 'ShipPostalCode'
+      Origin = 'ShipPostalCode'
+      Size = 10
+    end
+    object OrdersTableShipCountry: TStringField
+      FieldName = 'ShipCountry'
+      Origin = 'ShipCountry'
+      Size = 15
+    end
+    object OrdersTableShipViaFull: TStringField
+      FieldKind = fkLookup
+      FieldName = 'ShipViaFull'
+      LookupDataSet = ShippersTable
+      LookupKeyFields = 'ShipperID'
+      LookupResultField = 'CompanyName'
+      KeyFields = 'ShipVia'
+      Size = 30
+      Lookup = True
+    end
+  end
+  object ShippersTable: TFDQuery
+    Active = True
+    Connection = Sqlite_demoConnection
+    SQL.Strings = (
+      'SELECT * FROM Shippers')
+    Left = 823
+    Top = 300
   end
 end
