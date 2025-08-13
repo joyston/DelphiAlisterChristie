@@ -10,7 +10,7 @@ uses
   FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -37,6 +37,20 @@ type
     OrdersTableShipPostalCode: TStringField;
     OrdersTableShipCountry: TStringField;
     OrdersTableShipViaFull: TStringField;
+    CustomersTableCustomerID: TStringField;
+    CustomersTableCompanyName: TStringField;
+    CustomersTableContactName: TStringField;
+    CustomersTableContactTitle: TStringField;
+    CustomersTableAddress: TStringField;
+    CustomersTableCity: TStringField;
+    CustomersTableRegion: TStringField;
+    CustomersTablePostalCode: TStringField;
+    CustomersTableCountry: TStringField;
+    CustomersTablePhone: TStringField;
+    CustomersTableFax: TStringField;
+    Panel1: TPanel;
+    btnNewCustomer: TButton;
+    procedure btnNewCustomerClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,5 +63,13 @@ var
 implementation
 
 {$R *.dfm}
+
+uses fCustomer;
+
+procedure TForm1.btnNewCustomerClick(Sender: TObject);
+begin
+  CustomersTable.Insert;
+  Form2.ShowModal;
+end;
 
 end.

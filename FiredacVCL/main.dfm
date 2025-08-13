@@ -13,9 +13,9 @@ object Form1: TForm1
   TextHeight = 15
   object gCustomers: TDBGrid
     Left = 0
-    Top = 0
+    Top = 57
     Width = 932
-    Height = 459
+    Height = 402
     Align = alClient
     DataSource = dsCustomers
     TabOrder = 0
@@ -93,6 +93,26 @@ object Form1: TForm1
         Visible = True
       end>
   end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 932
+    Height = 57
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 930
+    object btnNewCustomer: TButton
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 173
+      Height = 49
+      Align = alLeft
+      Caption = 'New Customer'
+      TabOrder = 0
+      OnClick = btnNewCustomerClick
+    end
+  end
   object dsCustomers: TDataSource
     DataSet = CustomersTable
     Left = 376
@@ -118,6 +138,65 @@ object Form1: TForm1
       'SELECT * FROM Customers')
     Left = 277
     Top = 185
+    object CustomersTableCustomerID: TStringField
+      FieldName = 'CustomerID'
+      Origin = 'CustomerID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+      FixedChar = True
+      Size = 5
+    end
+    object CustomersTableCompanyName: TStringField
+      FieldName = 'CompanyName'
+      Origin = 'CompanyName'
+      Required = True
+      Size = 40
+    end
+    object CustomersTableContactName: TStringField
+      FieldName = 'ContactName'
+      Origin = 'ContactName'
+      Size = 30
+    end
+    object CustomersTableContactTitle: TStringField
+      FieldName = 'ContactTitle'
+      Origin = 'ContactTitle'
+      Size = 30
+    end
+    object CustomersTableAddress: TStringField
+      FieldName = 'Address'
+      Origin = 'Address'
+      Size = 60
+    end
+    object CustomersTableCity: TStringField
+      FieldName = 'City'
+      Origin = 'City'
+      Size = 15
+    end
+    object CustomersTableRegion: TStringField
+      FieldName = 'Region'
+      Origin = 'Region'
+      Size = 15
+    end
+    object CustomersTablePostalCode: TStringField
+      FieldName = 'PostalCode'
+      Origin = 'PostalCode'
+      Size = 10
+    end
+    object CustomersTableCountry: TStringField
+      FieldName = 'Country'
+      Origin = 'Country'
+      Size = 15
+    end
+    object CustomersTablePhone: TStringField
+      FieldName = 'Phone'
+      Origin = 'Phone'
+      Size = 24
+    end
+    object CustomersTableFax: TStringField
+      FieldName = 'Fax'
+      Origin = 'Fax'
+      Size = 24
+    end
   end
   object OrdersTable: TFDQuery
     Active = True
